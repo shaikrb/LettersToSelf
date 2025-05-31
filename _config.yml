@@ -9,3 +9,7 @@ github_username: jekyll
 theme: minima
 plugins:
   - jekyll-feed
+collections:
+  booknotes:
+    output: true
+    permalink: /book-notes/:title/
