@@ -6,21 +6,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <style>
-    body { font-family: sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
-    header, footer { background: #222; color: #fff; padding: 1rem; text-align: center; }
-    nav a { color: #fff; margin: 0 1rem; text-decoration: none; }
-    main { max-width: 700px; margin: 2rem auto; padding: 1rem; background: #fff; border-radius: 8px; }
-    a { color: #007acc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-  </style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code&display=swap');
+
+  :root {
+    --bg: #fefcfb;
+    --text: #333;
+    --accent: #007acc;
+    --header-bg: #222;
+    --header-text: #fff;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+
+  header, footer {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  nav a {
+    color: var(--header-text);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  main {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  h1, h2, h3 {
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+
+  code {
+    font-family: 'Fira Code', monospace;
+    background: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+  }
+</style>
+
 </head>
 <body>
   <header>
     <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
     <nav>
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/about' | relative_url }}">About</a>
-    </nav>
+  <a href="{{ '/' | relative_url }}">Home</a>
+  <a href="{{ '/about' | relative_url }}">About</a>
+  <a href="{{ '/projects' | relative_url }}">Projects</a>
+  <a href="{{ '/blog' | relative_url }}">Blog</a>
+  <a href="{{ '/book-notes' | relative_url }}">Book Notes</a>
+</nav>
+
   </header>
 
   <main>
