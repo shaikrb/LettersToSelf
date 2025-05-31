@@ -5,16 +5,17 @@ title: Book Notes
 
 # 📚 Book Notes
 
-Here’s what I’ve been reading:
-
-## Atomic Habits by James Clear
-
-- Key takeaway 1
-- Key takeaway 2
-
----
-
-## Deep Work by Cal Newport
-
-- Insight 1
-- Insight 2
+<ul>
+  {% for note in site.booknotes %}
+    <li>
+      <a href="{{ note.url | relative_url }}">{{ note.title }}</a>
+      <small>by {{ note.author }}</small>
+      {% if note.categories.size > 0 %}
+        — Categories:
+        {% for cat in note.categories %}
+          <a href="{{ '/categories/#' | append: cat | relative_url }}">{{ cat }}</a>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
