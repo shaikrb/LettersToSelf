@@ -1,8 +1,16 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
-layout: home
-[About]({{ site.baseurl }}/about.markdown)
-[Home]({{ site.baseurl }}/)
+layout: default
+title: Home
 ---
+
+# Welcome to {{ site.title }}
+
+This is my personal blog where I write letters to myself. 🌿
+
+## Recent Posts
+
+<ul>
+  {% for post in site.posts limit:5 %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> - {{ post.date | date: "%b %-d, %Y" }}</li>
+  {% endfor %}
+</ul>
